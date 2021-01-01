@@ -16,12 +16,12 @@ namespace EshopConsoleApp
 
         static void Main()
         {
-
             var productService = new ProductServices();
             var products = productService.Create();
             Searching();
             Print(products);
         }
+        
         static void Print(List<ProductModel> products)
         {
 
