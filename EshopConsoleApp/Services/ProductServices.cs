@@ -107,16 +107,7 @@ namespace EshopConsoleApp.Services
    
             var products = this.Create();
             var productAfterSearch = products.Where(p => p.Name.ToLower().Contains(searchProduct.ToLower())).ToList();
-            
-            foreach (var product in products) ;
-            if (String.IsNullOrEmpty(searchProduct))
-            {
-                Console.WriteLine("enter correct name of the request product");
-            }
-            else
-            {
-                return productAfterSearch;
-            }
+
             return productAfterSearch;
         }
     }

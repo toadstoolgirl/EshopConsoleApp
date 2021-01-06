@@ -47,10 +47,10 @@ namespace EshopConsoleApp
         {
             while (true)
             {
-                Console.WriteLine("Welcome to artists supplies store! \nenter comand,comand manager - /help");
-                var comand = Console.ReadLine();
-                if (comand != null)
-                    switch (comand.ToLower())
+                Console.WriteLine("Welcome to artists supplies store! \nenter command,command manager - /help");
+                var command = Console.ReadLine();
+                if (command != null)
+                    switch (command.ToLower())
                     {
                         case SearchCommand:
                             Search();
@@ -72,13 +72,22 @@ namespace EshopConsoleApp
             var searchProduct = Console.ReadLine();
             var productServices = new ProductServices();
             var productAfterSearch = productServices.Search(searchProduct);
-            Print(productAfterSearch);
+            if (String.IsNullOrEmpty(searchProduct))
+            {
+                Console.WriteLine("enter correct name of the request product");
+            }
+            else
+            {
+                Print (productAfterSearch);
+            }
         }
 
+        
+        
         static void Help()
         {
             Console.WriteLine($"enter /search to get to the search engine module");
-
+            
 
 
         }
