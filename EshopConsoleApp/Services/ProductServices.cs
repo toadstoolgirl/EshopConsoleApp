@@ -106,9 +106,16 @@ namespace EshopConsoleApp.Services
         {
    
             var products = this.Create();
-            var productAfterSearch = products.Where(p => p.Name.ToLower().Contains(searchProduct.ToLower())).ToList();
+            foreach (var s in products)
+            {
+                if (s.Name.ToLower() == searchProduct.ToLower())
+                {
+                    
+                }
+            }
 
-            return productAfterSearch;
+            return products;
         }
     }
 }
+ 

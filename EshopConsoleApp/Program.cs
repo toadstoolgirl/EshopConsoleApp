@@ -88,8 +88,6 @@ namespace EshopConsoleApp
         {
             Console.WriteLine($"enter /search to get to the search engine module");
             
-
-
         }
 
     }
